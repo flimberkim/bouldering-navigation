@@ -36,4 +36,9 @@ public class Rock {
         this.name = name;
         this.mountain = mountain;
     }
+
+    public void update(String name, Mountain mountain) {
+        this.name = name;
+        this.mountain = mountain;
+    }
 }

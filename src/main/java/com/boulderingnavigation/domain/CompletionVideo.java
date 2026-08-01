@@ -43,4 +43,10 @@ public class CompletionVideo {
         this.platform = platform;
         this.problem = problem;
     }
+
+    public void update(String url, VideoPlatform platform, Problem problem) {
+        this.url = url;
+        this.platform = platform;
+        this.problem = problem;
+    }
 }

@@ -40,4 +40,10 @@ public class Problem {
         this.grade = grade;
         this.rock = rock;
     }
+
+    public void update(String name, String grade, Rock rock) {
+        this.name = name;
+        this.grade = grade;
+        this.rock = rock;
+    }
 }

@@ -28,4 +28,8 @@ public class Region {
     public Region(String name) {
         this.name = name;
     }
+
+    public void rename(String name) {
+        this.name = name;
+    }
 }

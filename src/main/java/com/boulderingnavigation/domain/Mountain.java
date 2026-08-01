@@ -36,4 +36,9 @@ public class Mountain {
         this.name = name;
         this.region = region;
     }
+
+    public void update(String name, Region region) {
+        this.name = name;
+        this.region = region;
+    }
 }
