@@ -7,3 +7,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+
+jwt:
+  secret: ${JWT_SECRET:dev-only-change-me-32-bytes-minimum-secret-key}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}

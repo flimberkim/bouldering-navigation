@@ -16,6 +16,10 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .layout__brand {
@@ -32,6 +36,32 @@
   width: 26px;
   height: 26px;
   color: #eadfc2;
+}
+
+.layout__auth-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.9rem;
+}
+
+.layout__auth-nickname {
+  color: var(--color-surface);
+  opacity: 0.9;
+}
+
+.layout__auth-link {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--color-surface);
+  opacity: 0.85;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.layout__auth-link:hover {
+  opacity: 1;
 }
 
 .layout__main {

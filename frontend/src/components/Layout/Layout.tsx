@@ -1,7 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import "./Layout.css";
 
 export function Layout() {
+  const { user, isLoading, logout } = useAuth();
+
   return (
     <div className="layout">
       <header className="layout__header">
@@ -13,6 +16,28 @@ export function Layout() {
             </svg>
             <span>볼더가이드</span>
           </Link>
+
+          {!isLoading && (
+            <nav className="layout__auth-nav">
+              {user ? (
+                <>
+                  <span className="layout__auth-nickname">{user.nickname}님</span>
+                  <button type="button" className="layout__auth-link" onClick={logout}>
+                    로그아웃
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to="/login" className="layout__auth-link">
+                    로그인
+                  </Link>
+                  <Link to="/signup" className="layout__auth-link">
+                    회원가입
+                  </Link>
+                </>
+              )}
+            </nav>
+          )}
         </div>
       </header>
       <main className="layout__main">

@@ -36,3 +36,4 @@
 ## 기존 사례
 
 - [2026-08-08-broaden-mountain-search-to-problem-and-grade.md](2026-08-08-broaden-mountain-search-to-problem-and-grade.md) — 검색 쿼리 파라미터를 산 이름 전용에서 문제 이름/등급까지 포함하도록 확장한 결정.
+- [2026-08-09-auth-service-does-not-split-query-and-command.md](2026-08-09-auth-service-does-not-split-query-and-command.md) — 인증(signup/login)은 일반적인 Query/Command 분리 기준을 따르지 않기로 한 결정.

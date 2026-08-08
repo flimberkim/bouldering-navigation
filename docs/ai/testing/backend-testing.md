@@ -18,7 +18,8 @@
 - `@BeforeEach`에서 리포지토리로 실제 연관관계를 가진 엔티티를 시딩한다. 순서는 상위 → 하위 (`Region → Mountain → Rock → Problem → CompletionVideo`), 각 엔티티는 `.builder()...build()`로 만들고 바로 `repository.save(...)`한다.
 - 검증은 `MockMvc` + `jsonPath`로 한다. 상태 코드와 필드 값을 함께 검증한다.
 - 테스트 메서드명은 한글 문장으로 짓는다 — 자세한 규칙은 [coding-rules/naming.md](../coding-rules/naming.md).
-- 테스트 DB는 H2를 MariaDB 호환 모드로 띄운다 (`src/test/resources/application.yml`: `jdbc:h2:mem:...;MODE=MariaDB`, `ddl-auto: create-drop`). 운영 DB 설정(`src/main/resources/application.yml`)과는 별도다.
+- 테스트 DB는 H2를 MariaDB 호환 모드로 띄운다 (`src/test/resources/application.yml`: `jdbc:h2:mem:...;MODE=MariaDB`, `ddl-auto: create-drop`).
+- **`src/test/resources/application.yml`은 `src/main/resources/application.yml`과 병합되지 않고 완전히 대체한다.** Spring Boot가 클래스패스에서 `application.yml`을 하나만 로드하기 때문에, 테스트 클래스패스에서는 `src/test/resources`쪽이 우선한다. 즉 `jwt.secret`처럼 main의 `application.yml`에만 추가한 새 설정 값은 테스트에서 플레이스홀더를 못 찾아 `PlaceholderResolutionException`으로 컨텍스트 로딩이 실패한다 — **datasource 외의 설정을 main `application.yml`에 추가할 때마다 같은 키를 `src/test/resources/application.yml`에도 동일하게(같은 env-var-with-default 형태로) 추가해야 한다.**
 - `api-spec.yaml` 계약 검증은 `ApiSpecContractTest` 하나가 전담한다 — 새 엔드포인트를 추가할 때마다 별도의 계약 테스트를 만들지 않는다. 대신 `api-spec.yaml`을 실제 라우트와 맞게 갱신하기만 하면 이 테스트가 자동으로 검증한다.
 
 ## 예제

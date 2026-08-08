@@ -5,6 +5,20 @@
 export const API_BASE_URL: string =
   import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8080";
 
+const AUTH_TOKEN_STORAGE_KEY = "boulderguide.authToken";
+
+export function getStoredToken(): string | null {
+  return localStorage.getItem(AUTH_TOKEN_STORAGE_KEY);
+}
+
+export function setStoredToken(token: string): void {
+  localStorage.setItem(AUTH_TOKEN_STORAGE_KEY, token);
+}
+
+export function clearStoredToken(): void {
+  localStorage.removeItem(AUTH_TOKEN_STORAGE_KEY);
+}
+
 export class ApiError extends Error {
   readonly status: number;
 
@@ -25,10 +39,13 @@ async function readErrorMessage(response: Response): Promise<string> {
 }
 
 export async function apiRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  const token = getStoredToken();
+
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
     headers: {
       Accept: "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...init?.headers,
     },
   });

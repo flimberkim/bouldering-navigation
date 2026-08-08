@@ -35,3 +35,4 @@
 ## 기존 사례
 
 - [2026-08-08-cors-blocked-frontend-dev-requests.md](2026-08-08-cors-blocked-frontend-dev-requests.md) — 로컬 프론트엔드(Vite dev server)에서 백엔드 API 호출이 브라우저에서 전부 막혔던 문제.
+- [2026-08-09-spring-security-blocks-cors-preflight.md](2026-08-09-spring-security-blocks-cors-preflight.md) — Spring Security 도입 후 CORS 프리플라이트가 인가 단계에서 차단되어 프론트엔드의 모든 API 호출이 실패했던 문제.
