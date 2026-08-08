@@ -35,4 +35,5 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    inputs.file("api-spec.yaml")
 }

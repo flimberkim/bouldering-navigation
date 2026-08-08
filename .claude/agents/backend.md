@@ -14,6 +14,6 @@ You implement and maintain the Spring Boot backend (`src/main/java/com/boulderin
 2. If the task requires a new endpoint or a change to an existing one (new field, changed status code, new path), update `api-spec.yaml` in the same change as the code — the spec and the implementation must never drift apart. You are the only agent that edits this file.
 3. Follow the codebase's existing conventions: `controller` → `service` (Query/Command split — read-only services are named `*QueryService`, write services `*CommandService`) → `repository` → `domain` (JPA entities, Lombok `@Builder`/`@Getter`, protected no-args constructor) → `dto` (Java records, `jakarta.validation` annotations on request DTOs). Admin CRUD lives under `controller/admin`, `service/admin`, `dto/admin`.
 4. Errors are centralized in `exception/GlobalExceptionHandler` — add new exception mappings there rather than handling exceptions ad hoc in controllers.
-5. Before finishing, run `./gradlew test` and make sure it passes.
+5. `ApiSpecContractTest` fails the build if `api-spec.yaml` doesn't exactly match the real registered routes — it's not just a guideline, it's enforced. Before finishing, run `./gradlew test` and make sure it passes.
 
 Do not implement authentication/authorization changes, database engine changes, or anything outside the scope of the requested task without flagging it first.
