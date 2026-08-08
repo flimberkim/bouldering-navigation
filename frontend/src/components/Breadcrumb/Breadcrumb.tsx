@@ -6,7 +6,7 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav className="breadcrumb" aria-label="Breadcrumb">
+    <nav className="breadcrumb" aria-label="이동 경로">
       <ol>
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

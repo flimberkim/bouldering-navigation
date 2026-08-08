@@ -36,7 +36,7 @@ export function ProblemDetailPage() {
         const message =
           error instanceof ApiError
             ? error.message
-            : "Something went wrong while loading this problem.";
+            : "문제를 불러오는 중 문제가 발생했습니다.";
         setErrorMessage(message);
         setStatus("error");
       });
@@ -50,7 +50,7 @@ export function ProblemDetailPage() {
     return (
       <div className="problem-page__state" role="status">
         <div className="search-page__spinner" aria-hidden="true" />
-        <p>Loading problem&hellip;</p>
+        <p>문제를 불러오는 중&hellip;</p>
       </div>
     );
   }
@@ -58,10 +58,10 @@ export function ProblemDetailPage() {
   if (status === "not-found") {
     return (
       <div className="problem-page__state">
-        <h1>Problem not found</h1>
-        <p>We couldn&rsquo;t find a problem with that ID.</p>
+        <h1>문제를 찾을 수 없습니다</h1>
+        <p>해당 ID의 문제를 찾을 수 없습니다.</p>
         <Link to="/" className="problem-page__back">
-          &larr; Back to search
+          &larr; 검색으로 돌아가기
         </Link>
       </div>
     );
@@ -80,7 +80,7 @@ export function ProblemDetailPage() {
   return (
     <div className="problem-page">
       <Link to="/" className="problem-page__back">
-        &larr; Back to search
+        &larr; 검색으로 돌아가기
       </Link>
 
       <Breadcrumb items={[problem.regionName, problem.mountainName, problem.rockName]} />
@@ -91,10 +91,10 @@ export function ProblemDetailPage() {
       </header>
 
       <section className="problem-page__videos">
-        <h2>Completion videos</h2>
+        <h2>완등 영상</h2>
         {problem.videos.length === 0 ? (
           <p className="problem-page__empty">
-            No completion videos have been added for this problem yet.
+            아직 등록된 완등 영상이 없습니다.
           </p>
         ) : (
           <ul className="problem-page__video-list">

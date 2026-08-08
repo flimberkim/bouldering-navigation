@@ -38,7 +38,7 @@ export function SearchPage() {
         const message =
           error instanceof ApiError
             ? error.message
-            : "Something went wrong while searching. Please try again.";
+            : "검색 중 문제가 발생했습니다. 다시 시도해주세요.";
         setErrorMessage(message);
         setStatus("error");
       });
@@ -59,21 +59,21 @@ export function SearchPage() {
   return (
     <div className="search-page">
       <section className="search-page__intro">
-        <h1>Find your next problem</h1>
-        <p>Search bouldering mountains by name to browse their rocks and problems.</p>
+        <h1>다음 도전할 문제를 찾아보세요</h1>
+        <p>산 이름으로 검색해서 바위와 문제를 둘러보세요.</p>
         <SearchBar initialValue={query} onSearch={handleSearch} />
       </section>
 
       {status === "idle" && (
         <div className="search-page__state">
-          <p>Start by searching for a mountain, e.g. &ldquo;Fontainebleau&rdquo;.</p>
+          <p>산 이름을 검색해보세요. 예: &ldquo;수락산&rdquo;</p>
         </div>
       )}
 
       {status === "loading" && (
         <div className="search-page__state" role="status">
           <div className="search-page__spinner" aria-hidden="true" />
-          <p>Searching&hellip;</p>
+          <p>검색 중&hellip;</p>
         </div>
       )}
 
@@ -85,7 +85,7 @@ export function SearchPage() {
 
       {status === "success" && results.length === 0 && (
         <div className="search-page__state">
-          <p>No mountains found for &ldquo;{query}&rdquo;.</p>
+          <p>&ldquo;{query}&rdquo;에 대한 검색 결과가 없습니다.</p>
         </div>
       )}
 

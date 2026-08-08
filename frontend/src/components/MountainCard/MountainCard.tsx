@@ -28,25 +28,21 @@ export function MountainCard({ mountain }: MountainCardProps) {
           </div>
         </div>
         <div className="mountain-card__stats">
-          <span>
-            {rockCount} rock{rockCount === 1 ? "" : "s"}
-          </span>
+          <span>바위 {rockCount}개</span>
           <span aria-hidden="true">&middot;</span>
-          <span>
-            {problemCount} problem{problemCount === 1 ? "" : "s"}
-          </span>
+          <span>문제 {problemCount}개</span>
         </div>
       </header>
 
       {rockCount === 0 ? (
-        <p className="mountain-card__empty">No rocks recorded for this mountain yet.</p>
+        <p className="mountain-card__empty">아직 등록된 바위가 없습니다.</p>
       ) : (
         <div className="mountain-card__rocks">
           {mountain.rocks.map((rock) => (
             <section className="rock-block" key={rock.rockId}>
               <h3 className="rock-block__name">{rock.name}</h3>
               {rock.problems.length === 0 ? (
-                <p className="mountain-card__empty">No problems recorded yet.</p>
+                <p className="mountain-card__empty">아직 등록된 문제가 없습니다.</p>
               ) : (
                 <ul className="rock-block__problems">
                   {rock.problems.map((problem) => (

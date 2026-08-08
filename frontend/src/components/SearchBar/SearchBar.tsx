@@ -26,11 +26,11 @@ export function SearchBar({ initialValue = "", onSearch, placeholder }: SearchBa
         className="search-bar__input"
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        placeholder={placeholder ?? "Search mountains by name…"}
-        aria-label="Search mountains by name"
+        placeholder={placeholder ?? "산 이름으로 검색…"}
+        aria-label="산 이름으로 검색"
       />
       <button type="submit" className="search-bar__button">
-        Search
+        검색
       </button>
     </form>
   );

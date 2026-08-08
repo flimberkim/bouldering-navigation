@@ -11,7 +11,7 @@ export function Layout() {
               <path d="M2 26 L11 10 L16 17 L21 7 L30 26 Z" fill="currentColor" />
               <circle cx="24.5" cy="6" r="2" fill="var(--color-accent)" />
             </svg>
-            <span>Crag Guide</span>
+            <span>볼더가이드</span>
           </Link>
         </div>
       </header>
@@ -19,7 +19,7 @@ export function Layout() {
         <Outlet />
       </main>
       <footer className="layout__footer">
-        <p>Built for climbers, by climbers. Grades are approximate — send at your own risk.</p>
+        <p>클라이머가 클라이머를 위해 만들었습니다. 등급은 참고용이며, 등반은 본인 책임입니다.</p>
       </footer>
     </div>
   );

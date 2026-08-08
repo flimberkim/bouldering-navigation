@@ -4,7 +4,7 @@ import "./VideoLink.css";
 const PLATFORM_LABEL: Record<VideoPlatform, string> = {
   YOUTUBE: "YouTube",
   INSTAGRAM: "Instagram",
-  OTHER: "Video",
+  OTHER: "영상",
 };
 
 function PlatformIcon({ platform }: { platform: VideoPlatform }) {
