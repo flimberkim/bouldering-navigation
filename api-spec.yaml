@@ -13,9 +13,13 @@ servers:
 paths:
   /api/mountains:
     get:
-      summary: Search mountains by name (with nested rocks/problems)
+      summary: >
+        Search mountains by mountain name, problem name, or problem grade.
+        Matches by mountain name return the full rocks/problems listing;
+        matches by problem name/grade return only the matching rocks/problems,
+        so callers can see which mountain and rock a problem belongs to.
       parameters:
-        - name: name
+        - name: q
           in: query
           required: true
           schema:

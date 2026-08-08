@@ -26,8 +26,8 @@ export function SearchBar({ initialValue = "", onSearch, placeholder }: SearchBa
         className="search-bar__input"
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        placeholder={placeholder ?? "산 이름으로 검색…"}
-        aria-label="산 이름으로 검색"
+        placeholder={placeholder ?? "산, 문제 이름 또는 난이도로 검색…"}
+        aria-label="산, 문제 이름 또는 난이도로 검색"
       />
       <button type="submit" className="search-bar__button">
         검색

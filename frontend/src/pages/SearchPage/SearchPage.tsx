@@ -11,7 +11,7 @@ type Status = "idle" | "loading" | "error" | "success";
 
 export function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("name") ?? "";
+  const query = searchParams.get("q") ?? "";
 
   const [status, setStatus] = useState<Status>("idle");
   const [results, setResults] = useState<MountainSearchResult[]>([]);
@@ -52,7 +52,7 @@ export function SearchPage() {
     if (value === "") {
       setSearchParams({});
     } else {
-      setSearchParams({ name: value });
+      setSearchParams({ q: value });
     }
   }
 
@@ -60,13 +60,16 @@ export function SearchPage() {
     <div className="search-page">
       <section className="search-page__intro">
         <h1>다음 도전할 문제를 찾아보세요</h1>
-        <p>산 이름으로 검색해서 바위와 문제를 둘러보세요.</p>
+        <p>산 이름, 문제 이름, 또는 난이도로 검색해서 바위와 문제를 둘러보세요.</p>
         <SearchBar initialValue={query} onSearch={handleSearch} />
       </section>
 
       {status === "idle" && (
         <div className="search-page__state">
-          <p>산 이름을 검색해보세요. 예: &ldquo;수락산&rdquo;</p>
+          <p>
+            산 이름, 문제 이름, 난이도로 검색해보세요. 예: &ldquo;수락산&rdquo;, &ldquo;크랙&rdquo;,
+            &ldquo;V4&rdquo;
+          </p>
         </div>
       )}
 

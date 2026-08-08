@@ -17,7 +17,7 @@ public class MountainController {
     private final MountainQueryService mountainQueryService;
 
     @GetMapping
-    public List<MountainSearchResponse> search(@RequestParam String name) {
-        return mountainQueryService.searchByName(name);
+    public List<MountainSearchResponse> search(@RequestParam String q) {
+        return mountainQueryService.search(q);
     }
 }

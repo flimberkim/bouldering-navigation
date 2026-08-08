@@ -60,7 +60,7 @@ class MountainAndProblemQueryTest {
 
     @Test
     void 산_이름으로_검색하면_바위와_문제_목록이_내려온다() throws Exception {
-        mockMvc.perform(get("/api/mountains").param("name", "수락"))
+        mockMvc.perform(get("/api/mountains").param("q", "수락"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].name").value("수락산"))
                 .andExpect(jsonPath("$[0].regionName").value("경기도"))
@@ -68,6 +68,32 @@ class MountainAndProblemQueryTest {
                 .andExpect(jsonPath("$[0].rocks[0].name").value("치마바위"))
                 .andExpect(jsonPath("$[0].rocks[0].problems[0].name").value("좌측 크랙"))
                 .andExpect(jsonPath("$[0].rocks[0].problems[0].grade").value("V4"));
+    }
+
+    @Test
+    void 문제_이름으로_검색하면_소속된_산과_바위가_함께_내려온다() throws Exception {
+        mockMvc.perform(get("/api/mountains").param("q", "좌측"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].name").value("수락산"))
+                .andExpect(jsonPath("$[0].rocks", hasSize(1)))
+                .andExpect(jsonPath("$[0].rocks[0].name").value("치마바위"))
+                .andExpect(jsonPath("$[0].rocks[0].problems", hasSize(1)))
+                .andExpect(jsonPath("$[0].rocks[0].problems[0].name").value("좌측 크랙"));
+    }
+
+    @Test
+    void 난이도로_검색하면_소속된_산과_바위가_함께_내려온다() throws Exception {
+        mockMvc.perform(get("/api/mountains").param("q", "V4"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].name").value("수락산"))
+                .andExpect(jsonPath("$[0].rocks[0].problems[0].grade").value("V4"));
+    }
+
+    @Test
+    void 검색어와_일치하는_산_바위_문제가_없으면_빈_목록을_반환한다() throws Exception {
+        mockMvc.perform(get("/api/mountains").param("q", "존재하지않음"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
     }
 
     @Test
