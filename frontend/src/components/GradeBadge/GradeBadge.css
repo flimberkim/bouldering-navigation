@@ -1,0 +1,50 @@
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.grade-badge--sm {
+  padding: 3px 8px;
+  font-size: 0.7rem;
+}
+
+.grade-badge--md {
+  padding: 4px 10px;
+  font-size: 0.78rem;
+}
+
+.grade-badge--lg {
+  padding: 8px 16px;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
+}
+
+.grade-tier-0 {
+  background: var(--grade-0-bg);
+  color: var(--grade-0-fg);
+}
+.grade-tier-1 {
+  background: var(--grade-1-bg);
+  color: var(--grade-1-fg);
+}
+.grade-tier-2 {
+  background: var(--grade-2-bg);
+  color: var(--grade-2-fg);
+}
+.grade-tier-3 {
+  background: var(--grade-3-bg);
+  color: var(--grade-3-fg);
+}
+.grade-tier-4 {
+  background: var(--grade-4-bg);
+  color: var(--grade-4-fg);
+}
+.grade-tier-5 {
+  background: var(--grade-5-bg);
+  color: var(--grade-5-fg);
+}

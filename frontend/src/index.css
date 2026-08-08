@@ -1,0 +1,114 @@
+:root {
+  /* Outdoorsy palette: forest greens, stone/earth neutrals, terracotta accent */
+  --color-bg: #f4f1e8;
+  --color-surface: #ffffff;
+  --color-surface-alt: #ede7d8;
+  --color-border: #ddd4bf;
+
+  --color-text: #26291f;
+  --color-text-muted: #656b57;
+  --color-text-faint: #8c9080;
+
+  --color-primary: #33472e;
+  --color-primary-dark: #212f1e;
+  --color-primary-light: #4c6644;
+  --color-accent: #c1682f;
+  --color-accent-dark: #a2551f;
+
+  --color-link: #33472e;
+
+  /* Grade badge tiers, easiest -> hardest */
+  --grade-0-bg: #e5f0dc;
+  --grade-0-fg: #35611f;
+  --grade-1-bg: #dcefe6;
+  --grade-1-fg: #1c6b52;
+  --grade-2-bg: #fdf1cf;
+  --grade-2-fg: #8a6511;
+  --grade-3-bg: #fbe4cc;
+  --grade-3-fg: #9a4d10;
+  --grade-4-bg: #f8d9d3;
+  --grade-4-fg: #9c3223;
+  --grade-5-bg: #ecdcf0;
+  --grade-5-fg: #5f2a72;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-card: 0 1px 2px rgba(38, 41, 31, 0.06), 0 4px 12px rgba(38, 41, 31, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(38, 41, 31, 0.08), 0 10px 24px rgba(38, 41, 31, 0.1);
+
+  --sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  font: 16px/1.5 var(--sans);
+  color-scheme: light;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--sans);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

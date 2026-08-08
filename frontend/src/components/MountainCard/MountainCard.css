@@ -1,0 +1,99 @@
+.mountain-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+}
+
+.mountain-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.mountain-card__name {
+  font-size: 1.35rem;
+  margin-bottom: 4px;
+}
+
+.mountain-card__region {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.mountain-card__pin {
+  width: 15px;
+  height: 15px;
+  color: var(--color-accent);
+}
+
+.mountain-card__stats {
+  display: flex;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.mountain-card__empty {
+  color: var(--color-text-faint);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.mountain-card__rocks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rock-block__name {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.rock-block__problems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.problem-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.problem-chip:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 520px) {
+  .mountain-card {
+    padding: 16px;
+  }
+}

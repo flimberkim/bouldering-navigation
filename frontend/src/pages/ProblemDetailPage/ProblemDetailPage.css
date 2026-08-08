@@ -1,0 +1,71 @@
+.problem-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.problem-page__back {
+  align-self: flex-start;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.problem-page__back:hover {
+  color: var(--color-primary);
+}
+
+.problem-page__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.problem-page__header h1 {
+  font-size: 1.7rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.problem-page__videos h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.problem-page__video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.problem-page__empty {
+  color: var(--color-text-faint);
+  font-style: italic;
+}
+
+.problem-page__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+  padding: 60px 16px;
+  text-align: center;
+}
+
+.problem-page__state--error {
+  color: var(--grade-4-fg);
+}
+
+.problem-page__state h1 {
+  font-size: 1.4rem;
+}
